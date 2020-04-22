@@ -1,0 +1,51 @@
+<html>
+<head>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script>
+
+                    $(document).ready(function(){
+
+
+
+
+                      
+
+
+                        var ten3 = setTimeout(rel3, 1500);
+                       function rel3() {
+                           $.get('/info/devname', function(data){
+                               $('#p2').text(data);
+                           });
+                       }
+
+                       var ten2 = setTimeout(rel2, 1500);
+                       function rel2() {
+                           $.get('/macadd', function(data){
+                               $('#p1').text(data);
+                           });
+                       }
+
+
+                    });
+</script>
+  <title>DomoSoft: Settings</title><link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'><link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'><meta name='viewport' content='width=device-width, initial-scale=1'><meta name='theme-color' content='#0069c0'></head>
+  <body class='w3-light-gray'><div class='w3-container  w3-margin-top'><div id='page-wrap' class='w3-teal w3-round w3-animate-top w3-container'>
+  <p class='w3-right'><a href='/'><button class='w3-button w3-hover-indigo  w3-right w3-teal w3-animate-zoom  w3-round'>Exit</button></a></p>
+<h4>DomoSoft Binary Sensor</h4><p id='p2'></p><div class='w3-bar w3-teal'>
+<a href='settings' class='w3-bar-item w3-hover-red'>General</a>
+				   <a href='mqttconf' class='w3-bar-item w3-hover-red'>MQTT</a>
+				   <a href='security' class='w3-bar-item w3-hover-red'>Security</a>
+				   <a href='mailconf' class='w3-bar-item w3-hover-red'>E-Mail</a>
+				     <a href='/info' class='w3-bar-item w3-right w3-hover-red  w3-mobile w3-button'><i class='material-icons  md-48'>info</i></a>
+   
+
+</div></div>
+  <div class='w3-container w3-margin-top'>
+  <h3 class="w3-center"><b>DC</b> Domotics</h3>
+<h2 class="w3-center"><b>DomoSoft 4.2</b></h2>
+<h4 class="w3-center w3-text-gray">Binary sensor <b>Version</b></h4>
+
+  <h5>WiFi MAC:</h5><p id='p1'>
+  </p>
+ 
+<p>Build:

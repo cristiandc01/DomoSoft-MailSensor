@@ -1,0 +1,57 @@
+<html>
+
+     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+                   <script>
+
+                   $(document).ready(function(){
+
+
+
+
+                      var ten = setTimeout(rel1, 1500);
+                       function rel1() {
+                           $.get('/mail/status', function(data){
+                             if (data==1) {
+                               $('#al1').attr('class','w3-button w3-green');
+                               $('#al2').attr('class','w3-button w3-teal');
+
+                             }else{
+                               $('#al2').attr('class','w3-button w3-green');
+                               $('#al1').attr('class','w3-button w3-teal');
+                             }
+                           });
+                       }
+                      var ten2 = setTimeout(rel2, 1500);
+                       function rel2() {
+                           $.get('/info/devname', function(data){
+                               $('#p1').text(data);
+                           });
+                       }
+
+                   });
+                   </script>
+
+
+
+<head><title>DomoSoft: Settings</title><link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'><link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'><meta name='viewport' content='width=device-width, initial-scale=1'><meta name='theme-color' content='#0069c0'></head>
+                   <body class='w3-light-gray'><div class='w3-container  w3-margin-top'><div id='page-wrap' class='w3-teal w3-round w3-animate-top w3-container'>
+                   <p class='w3-right'><a href='/'><button class='w3-button w3-hover-indigo  w3-right w3-teal w3-animate-zoom  w3-round'>Exit</button></a></p>
+                   <h4>DomoSoft Binary Sensor</h4>
+				   <div class='w3-bar w3-teal'><a href='settings' class='w3-bar-item w3-hover-red'>General</a>
+				   <a href='mqttconf' class='w3-bar-item w3-hover-red'>MQTT</a>
+				   <a href='security' class='w3-bar-item w3-hover-red'>Security</a>
+				   <a href='mailconf' class='w3-bar-item w3-hover-red'>E-Mail</a>
+  <a href='/info' class='w3-bar-item w3-right w3-hover-red  w3-mobile w3-button'><i class='material-icons  md-48'>info</i></a>
+   				  
+				  </div></div>
+				   
+				   <div class='w3-container w3-margin-top'><h3>E-Mail Service</h3><br><br>
+                  
+
+<a href='mailstat?q=on'><button id='al1' class='w3-button w3-teal'>ON</button></a><a href='mailstat?q=off'><button id='al2' class='w3-button w3-teal'>OFF</button></a>
+
+				  <form class='w3-container' action='mailSet' method='get'><p>eMail SMTP</p><input name='email'  class='w3-input w3-round w3-animate-input' type='text'><br><p>Password</p><input name='pwd'  class='w3-input w3-round w3-animate-input' type='password'><br><input type='submit' class='w3-btn w3-round w3-right w3-teal'></input></form>
+				  <br>
+				   <form class='w3-container' action='mailTo' method='get'><p>Receiver</p><input name='to'  class='w3-input w3-round w3-animate-input' type='text'><br><input type='submit' class='w3-btn w3-round w3-right w3-teal'></input></form>
+				   <br>
+				    <form class='w3-container' action='mailText' method='get'><p>Object</p><input name='subject'  class='w3-input w3-round w3-animate-input' type='text'><br><p>Mail Text</p><input name='messaggio'  class='w3-input w3-round w3-animate-input'><br><input type='submit' class='w3-btn w3-round w3-right w3-teal'></input></form>
