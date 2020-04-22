@@ -11,4 +11,8 @@ You can find the wiring diagram in this repository.
 
 ### Lenguage???
 
-Sorry but the system is only in Italian lenguage if you want to translate please send me a message in private.
+The system is available in English and Italian.
+
+### Build
+
+if you want you can build the firmware by downloading the source code. remember to rename the folder containing the data in "data".
