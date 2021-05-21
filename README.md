@@ -13,6 +13,3 @@ You can find the wiring diagram in this repository.
 
 The system is available in English and Italian.
 
-### Build
-
-if you want you can build the firmware by downloading the source code. remember to rename the folder containing the data in "data".
